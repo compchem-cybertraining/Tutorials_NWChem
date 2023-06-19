@@ -27,7 +27,7 @@ dft
 end
 
 gw
-  method analytical
+  method analytic
 end
 
 task dft gw

@@ -1,0 +1,39 @@
+echo
+start butane-excit
+
+title "TDDFT on butane"
+
+memory 1000 mb
+
+geometry
+symmetry c1
+H  1.0000  0.4400  0.0000
+C  1.0000  1.5400  0.0000
+C  2.4561  2.0414  0.0000
+H  0.4800  1.8981  0.9007
+H  0.4800  1.8981 -0.9007
+H  2.9640  1.6663 -0.9007
+H  2.9640  1.6663  0.9007
+C  2.4561  3.5814  0.0000
+C  3.9122  4.0827  0.0000
+H  1.9361  3.9395  0.9007
+H  1.9361  3.9395 -0.9007
+H  4.4201  3.7076 -0.9007
+H  4.4201  3.7076  0.9007
+H  3.9122  5.1828  0.0000
+end
+
+basis
+ C library 6-31G
+ H library 6-31G
+end
+
+dft
+ xc  becke88 1. lyp 1.   # BLYP functional
+end
+
+tddft
+ nroots 10
+ notriplet
+end
+task tddft energy

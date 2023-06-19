@@ -1,0 +1,33 @@
+echo
+
+title "demonstrate the use of multiplicity"
+
+start o2
+
+geometry units angstrom
+O        0.0000000000      0.0000000000      0.60066850000
+O        0.0000000000      0.0000000000     -0.60066850000
+symmetry c1
+end
+
+basis
+ * library 6-31G*
+end
+
+# as triplet
+dft
+ xc b3lyp
+ odft
+ mult 3
+ iterations 100
+end
+task dft energy
+
+# as singlet
+dft
+ xc b3lyp
+ odft
+ mult 1
+ iterations 100
+end
+task dft energy

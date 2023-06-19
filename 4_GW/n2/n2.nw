@@ -1,0 +1,19 @@
+geometry
+  N 0.0 0.0 -0.545
+  N 0.0 0.0  0.545
+  symmetry c1
+end
+
+basis "ao basis" spherical
+ * library def2-qzvp
+end
+
+basis "cd basis" spherical bse
+ * library def2-universal-jkfit
+end
+
+dft
+  xc mgga_x_r2scan mgga_c_r2scan
+end
+
+task dft gw

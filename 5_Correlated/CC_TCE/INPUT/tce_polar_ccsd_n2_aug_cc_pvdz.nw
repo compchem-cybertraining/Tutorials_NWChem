@@ -1,0 +1,36 @@
+echo
+
+start tce_polar_ccsd_small
+
+permanent_dir /dtemp/kowalski
+
+memory stack 900 mb heap 100 mb global 1100 mb noverify
+
+geometry units au
+ symmetry d2h
+ N  0  0 -1.034
+ N  0  0  1.034
+end
+
+basis spherical
+ * library aug-cc-pVDZ
+end
+
+scf
+  singlet
+  rhf
+  thresh 1e-8
+end
+
+tce
+  scf
+  ccsd
+  io ga
+  2eorb
+end
+
+set tce:lineresp T
+set tce:respaxis T F T
+set tce:afreq 0.00000000 0.08855851 0.104551063 
+
+task tce energy

@@ -1,0 +1,45 @@
+title "h2o_dimer_cc_pvdz"
+echo
+start h2o_dimer_cc_pvdz
+
+permanent_dir /dtemp/kowalski
+
+memory stack 900 mb heap 100 mb global 1100 mb noverify
+
+geometry units angstrom
+O    0.0000000   0.00000000  0.00000000
+O   -0.2953673   0.00000000  2.90144000
+H    0.0000000   0.00000000  0.97287010
+H    0.9351134   0.00000000 -0.23780130
+H   -0.8267692  -0.76271270  3.16656200
+H   -0.8267692   0.76271270  3.16656200
+end
+
+basis spherical
+* library aug-cc-pvdz
+end
+
+scf
+thresh 1.0e-10
+tol2e 1.0e-10
+singlet
+rhf
+end
+
+tce
+freeze atomic
+ccsd
+tilesize 20
+diis 10
+thresh 1.0d-5
+2eorb
+2emet 13
+nroots 1
+eomsol 2
+symmetry
+targetsym a'
+end
+
+task tce energy
+
+

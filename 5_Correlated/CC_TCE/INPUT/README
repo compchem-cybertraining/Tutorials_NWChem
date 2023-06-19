@@ -1,0 +1,16 @@
+INPUT  FILE                              PLEASE USE
+===========                                  ======
+h2o_dimer_ccsd_aug_cc_pvdz.nw                4cores
+cnh2o_ccsd_t_cc_pvdz.nw                      4cores
+tce_cr_ccsd_t_ozone_pol1.nw                  4cores
+h2o_dimer_ccsdt_cc_pvdz.nw                   8cores
+mbpt2_h2o.nw                                 4cores
+mbpt4sdq_h2o.nw                              4cores
+h2o_dimer_eomccsd_aug_cc_pvdz.nw             4cores
+h2o_dimer_eomccsd_aug_cc_pvdz_eomsol2.nw     4cores
+tce_h2o_eomccsdt_cc-pvdz.nw                  4cores
+tce_active_ccsdt_be3.nw                      8cores
+tce_cr_eom_t_ozone_pol1.nw                   8cores
+tce_polar_ccsd_n2_aug_cc_pvdz.nw             4cores
+tce_polar_ccsd_benzene.nw                   16cores
+

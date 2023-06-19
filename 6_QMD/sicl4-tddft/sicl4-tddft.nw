@@ -1,0 +1,34 @@
+geometry noautosym noautoz
+Si -0.00007905     0.00044148     0.00000001
+Cl  0.71289590     1.00767685     1.74385011
+Cl -2.13658008    -0.00149375    -0.00000001
+Cl  0.71086735    -2.01430142    -0.00000001
+Cl  0.71289588     1.00767684    -1.74385011
+end
+
+basis
+* library 6-31G
+end
+
+dft
+ xc ncap
+end
+
+qmd
+ nstep_nucl  200
+ dt_nucl     10.d0
+ targ_temp   200.d0
+ com_step    10
+ rand_seed   12345
+ thermostat  berendsen
+# calculate TDDFT every 3 steps
+ tddft 3
+end
+
+tddft
+ nroots 2
+ notriplet
+end
+
+task dft qmd
+

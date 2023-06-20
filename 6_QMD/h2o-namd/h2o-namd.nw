@@ -1,0 +1,38 @@
+geometry noautosym nocenter
+O 0.0000  0.0000  0.1197
+H 0.0000  0.7615 -0.4790
+H 0.0000 -0.7615 -0.4790
+end
+
+basis
+* library 6-31G*
+end
+
+dft
+  xc b3lyp
+end
+
+tddft
+  nroots 10
+  notriplet
+  cis
+  civecs
+  grad
+    root 1
+  end
+end
+
+qmd
+  nstep_nucl 50
+  dt_nucl 0.5
+  targ_temp 300.0
+  thermostat svr 500
+  namd 
+    nstates 5
+    init_state 3
+    dt_elec 0.1
+    deco .true.
+  end
+end
+
+task tddft qmd

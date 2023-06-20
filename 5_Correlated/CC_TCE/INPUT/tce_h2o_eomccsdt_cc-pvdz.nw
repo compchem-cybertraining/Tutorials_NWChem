@@ -1,0 +1,36 @@
+start tce_h2o_eomccsdt_cc-pvdz 
+
+permanent_dir /dtemp/kowalski
+
+memory stack 900 mb heap 100 mb global 1100 mb noverify
+ 
+echo
+ 
+geometry units bohr
+symmetry c1
+H    1.474611052297904   0.000000000000000   0.863401706825835
+O    0.000000000000000   0.000000000000000  -0.215850436155089
+H   -1.474611052297904   0.000000000000000   0.863401706825835
+end
+ 
+basis
+* library cc-pvdz
+end
+ 
+scf
+thresh 1.0e-12
+tol2e 0.0e-10
+singlet
+rhf
+end
+ 
+tce
+ccsdt
+dipole
+freeze core atomic
+thresh 1.0d-6
+nroots 1
+end
+ 
+task tce energy
+ 

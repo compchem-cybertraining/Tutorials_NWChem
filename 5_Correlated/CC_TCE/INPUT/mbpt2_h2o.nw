@@ -1,0 +1,29 @@
+start mbpt2_h2o
+
+memory stack 900 mb heap 100 mb global 900 mb noverify
+
+echo
+
+geometry units bohr
+O      0.000000000000     0.000000000000    -0.123909374404
+H      0.000000000000     1.429936611037     0.983265845431
+H      0.000000000000    -1.429936611037     0.983265845431
+symmetry c1
+end
+
+basis
+* library cc-pvdz
+end
+
+scf
+thresh 1.0e-10
+tol2e 1.0e-10
+singlet
+rhf
+end
+
+tce
+mbpt2
+end
+
+task tce energy

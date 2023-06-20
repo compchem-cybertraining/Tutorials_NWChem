@@ -1,0 +1,41 @@
+title "cnh2o_ccsd_t_cc_pvdz"
+echo
+start cnh2o_ccsd_t_cc_pvdz.nw
+
+memory stack 900 mb heap 100 mb global 1100 mb noverify
+
+geometry units bohr noautoz
+N       0.193533   1.637705   0.000000
+H       0.288822  -1.764435   0.000000
+O       0.090544  -3.623970   0.000000
+H      -1.711022  -3.804092   0.000000
+C      -0.113453   3.845317   0.000000
+end
+
+basis spherical
+* library cc-pvdz
+end
+
+scf
+thresh 1.0e-10
+tol2e 1.0e-10
+doublet
+rohf
+end
+
+tce
+freeze atomic
+ccsd(t)
+maxiter 100
+tilesize 15
+diis 5
+lshift 0.2
+thresh 1.0d-5
+2eorb
+2emet 13
+attilesize 40 
+end
+
+task tce energy
+
+

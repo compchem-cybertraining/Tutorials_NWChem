@@ -1,0 +1,21 @@
+geometry noautosym noautoz
+ O   0.00000000    -0.01681748     0.11334792
+ H   0.00000000     0.81325914    -0.34310308
+ H   0.00000000    -0.67863597    -0.56441201
+end
+
+dft; xc hfexch; end
+
+basis; * library 6-31g* ;end
+
+qmd 
+  nstep_nucl  200
+  dt_nucl     10.d0
+  targ_temp   200.d0
+  com_step    10
+  rand_seed   12345
+  thermostat  svr
+  print_xyz   5
+end
+
+task dft qmd

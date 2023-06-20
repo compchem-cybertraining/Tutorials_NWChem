@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/nwchem/!svn/ver/27570/trunk/contrib/qmd_tools
+END
+qmd_analysis.f90
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/nwchem/!svn/ver/27537/trunk/contrib/qmd_tools/qmd_analysis.f90
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/nwchem/!svn/ver/27570/trunk/contrib/qmd_tools/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/nwchem/!svn/ver/27570/trunk/contrib/qmd_tools/README
+END

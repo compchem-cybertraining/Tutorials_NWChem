@@ -1,0 +1,22 @@
+geometry noautosym noautoz
+Si -0.00007905     0.00044148     0.00000001
+Cl  0.71289590     1.00767685     1.74385011
+Cl -2.13658008    -0.00149375    -0.00000001
+Cl  0.71086735    -2.01430142    -0.00000001
+Cl  0.71289588     1.00767684    -1.74385011
+end
+
+xtb
+ method gfn2
+end
+
+qmd
+ nstep_nucl  20000
+ dt_nucl     10.0
+ targ_temp   20.0
+ com_step    10
+ rand_seed   12345
+ thermostat  none
+end
+
+task xtb qmd

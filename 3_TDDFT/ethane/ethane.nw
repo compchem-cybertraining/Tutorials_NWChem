@@ -1,0 +1,32 @@
+echo
+start ethane-excit
+
+title "TDDFT on ethane"
+
+memory 1000 mb
+
+geometry
+symmetry c1
+C -0.5371  0.1483 -0.0004
+C  0.9655  0.0799  0.0003
+H -0.9004  1.0545 -0.5025
+H -0.9797 -0.7117 -0.5198
+H -0.9424  0.1567  1.0198
+H  1.4100  0.9449  0.5095
+H  1.3299 -0.8206  0.5119
+H  1.3706  0.0614 -1.0198
+end
+
+basis
+ C library 6-31G
+ H library 6-31G
+end
+
+dft
+ xc  becke88 1. lyp 1.   # BLYP functional
+end
+
+tddft
+ nroots 10
+end
+task tddft energy
